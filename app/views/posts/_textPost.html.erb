@@ -1,0 +1,11 @@
+<div id='text_div<%=post.id%>'>
+  <h3><%= post.title %></h3><br>
+  <%= post.body %>
+  <form class="Post" data-id='<%=post.id%>'>
+      <input type='text' id='comment_text'>
+      <input type='submit'>
+  </form>
+  <%post.comments.each do |x|%>
+  <%= x.text %><br>
+  <%end%>
+</div>

@@ -1,0 +1,11 @@
+<div id='pic_div<%=post.id%>'>
+  <h3> <%= post.title%></h3>
+  <img src='<%= post.url %>'>
+  <form class="Picture" data-id='<%=post.id%>'>
+      <input type='text' id='comment_text'>
+      <input type='submit'>
+  </form>
+  <%post.comments.each do |x|%>
+  <%= x.text %><br>
+  <%end%>
+</div>

@@ -1,0 +1,29 @@
+<h1> Test </h1>
+
+ <form id="post_form">
+  <h3> Create Text Post </h3>
+    <input id="post_title" type="text" name="post_title" placeholder="Post Title">
+    <br>
+    <textarea rows="10" cols="50" id="body" name="body" form="post_form" placeholder="Enter Post Here"></textarea>
+    <input id= "button" type= "submit" value="Submit Blog Post">
+ </form>
+
+  <form id="pictures_form">
+  <h3> Create Picture Post </h3>
+    <input id="pic_title" type="text" name="pic_title" placeholder="Post Title">
+    <input id="url" type="text" name="url" placeholder="Paste Picture url">
+    <input id= "button" type= "submit" value="Submit Picture Link">
+ </form>
+
+ <div id="posts">
+  <% @blog_post.each do |blog| %>
+    <% if blog.class == Picture %>
+      <%= render 'pictures', post: blog %>
+    <%else%>
+      <%= render 'textPost', post: blog %>
+    <%end%>
+  <%end%>
+
+
+
+ </div>
